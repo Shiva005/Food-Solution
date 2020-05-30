@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group >
+        <item android:id="@+id/your_order" android:title="Your Order"
+            android:icon="@drawable/save"/>
+
+        <item android:id="@+id/Toady_Special" android:title="Today's Special"
+            android:icon="@drawable/delete"/>
+
+        <item android:id="@+id/our_special" android:title="Our Special"
+            android:icon="@drawable/order"/>
+
+        <item android:id="@+id/policy_item" android:title="Policy"
+            android:icon="@drawable/policy"/>
+
+        <item android:id="@+id/about_us" android:title="About Us"
+            android:icon="@drawable/about"/>
+
+
+        <item android:id="@+id/Feed_back" android:title="Feedback"
+            android:icon="@drawable/feedback"/>
+    </group>
+
+    <item android:title="Account Settings">
+
+
+        <menu>
+            <item android:id="@+id/Show_profile"
+                android:title="Show Profile"
+                android:icon="@drawable/profile"/>
+
+            <!-- <item android:id="@+id/Update_profile"
+                 android:title="Update Profile"
+                 android:icon="@drawable/setting"/>-->
+
+            <item android:id="@+id/Reset_Password"
+                android:title="Update Password"
+                android:icon="@drawable/updatepass"/>
+
+            <item android:id="@+id/log_out"
+                android:title="Logout"
+                android:icon="@drawable/logout"/>
+
+        </menu>
+    </item>
+
+</menu>

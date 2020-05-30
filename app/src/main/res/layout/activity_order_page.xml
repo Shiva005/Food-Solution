@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".orderdetails.OrderPage">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_orderpage"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/signBack"
+            android:theme="?attr/actionBarTheme"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+    <ImageView
+        android:id="@+id/dish_view"
+        android:layout_width="310dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"/>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="310dp"
+        android:layout_height="50dp">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/food_name"
+            android:layout_width="167dp"
+            android:layout_height="match_parent"
+            android:text="Selected" />
+
+        <EditText
+
+            android:inputType="number"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:id="@+id/food_quantity"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/signBack"
+            android:hint="Quantity"
+            android:maxLength="2"/>
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Your Name"
+        android:inputType="text"
+        android:backgroundTint="@color/signBack"
+        />
+
+    <EditText
+        android:id="@+id/Phone_Order_Page"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="Phone number"
+        android:inputType="number"
+        android:maxLength="10"
+        android:backgroundTint="@color/signBack"
+        />
+    <EditText
+        android:id="@+id/Address"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/signBack"
+        android:hint="Full Address here"/>
+    <!-- <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="180dp"
+         android:text="OR"
+         android:layout_marginTop="5dp"/>
+
+     <CheckBox
+         android:id="@+id/DefaultAdd_Id"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="90dp"
+         android:layout_marginTop="5dp"
+         android:text="Use Default Address" />-->
+    <Button
+
+        android:background="@color/signBack"
+        android:id="@+id/Order"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:text="order"/>
+
+</LinearLayout>

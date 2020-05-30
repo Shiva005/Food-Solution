@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="signBack">#429DB2</color>
+
+    <color name="call">#35C235</color>
+    <color name="border">#ffff</color>
+    <color name="choose">#19AA8B</color>
+    <color name="choose2">#23A7D8</color>
+</resources>

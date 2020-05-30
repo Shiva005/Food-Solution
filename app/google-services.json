@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "240340699889",
+    "firebase_url": "https://food-solution-fcaa9.firebaseio.com",
+    "project_id": "food-solution-fcaa9",
+    "storage_bucket": "food-solution-fcaa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240340699889:android:57baeac681c05dcd",
+        "android_client_info": {
+          "package_name": "com.bd.foodsolution"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240340699889-8docgdabbvqn09rcjdrk9ok6ofjlf6oo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bd.foodsolution",
+            "certificate_hash": "4493f9d2448ab06d3d085c22ff913f50201a9bb5"
+          }
+        },
+        {
+          "client_id": "240340699889-l728uvvlf47gl90kp544t984tt0nl57k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5K5mZfUfAoSYdjTi-cvgeQIBUdsk2z6g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240340699889-l728uvvlf47gl90kp544t984tt0nl57k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

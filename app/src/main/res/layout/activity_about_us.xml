@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AboutUs">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appar_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_about"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:theme="@style/ThemeOverlay.AppCompat"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!-- <RelativeLayout
+         android:padding="5dp"
+         android:id="@+id/first_relative"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+
+     <LinearLayout
+         android:layout_marginTop="105dp"
+         android:layout_width="match_parent"
+         android:layout_height="170dp"
+         android:background="@drawable/side_nav_bar"
+         android:orientation="vertical"
+         android:gravity="center_horizontal">
+
+         <TextView
+
+             android:textColor="@android:color/black"
+             android:id="@+id/ohid_name"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="75dp"
+             android:text="Md Ohiduzzaman"
+             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+         <TextView
+             android:textColor="@android:color/black"
+             android:layout_marginBottom="2dp"
+             android:id="@+id/ohi_description"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/University"/>
+
+     </LinearLayout>
+     <de.hdodenhof.circleimageview.CircleImageView
+         android:src="@drawable/ohid"
+         android:id="@+id/ohid_photo"
+         android:layout_marginTop="50dp"
+         android:padding="10dp"
+         android:layout_width="130dp"
+         android:layout_height="130dp"
+         android:scaleType="centerCrop"
+         android:layout_centerHorizontal="true"/>
+
+
+         android:layout_below="@+id/first_relative"
+
+     </RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_marginTop="60dp"
+        android:id="@+id/shiva_view"
+        android:padding="5dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/side_nav_bar"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:id="@+id/shiva_name"
+                android:layout_marginTop="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shiv Kumar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:id="@+id/shiva_description"
+                android:layout_marginBottom="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shiva_University"/>
+
+
+
+        </LinearLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/shiva_photo"
+            android:padding="10dp"
+            android:src="@drawable/shiu"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:background="@drawable/side_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shiva_view">
+        <TextView
+            android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/OtherMemberText"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/OtherMembers"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/bannerAdUnitId">
+    </com.google.android.gms.ads.AdView>
+
+
+</RelativeLayout>
