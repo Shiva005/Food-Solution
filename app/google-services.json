@@ -1,52 +1,36 @@
 {
   "project_info": {
-    "project_number": "240340699889",
-    "firebase_url": "https://food-solution-fcaa9.firebaseio.com",
-    "project_id": "food-solution-fcaa9",
-    "storage_bucket": "food-solution-fcaa9.appspot.com"
+    "project_number": "723451701117",
+    "project_id": "food-solution-a5cbb",
+    "storage_bucket": "food-solution-a5cbb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:240340699889:android:57baeac681c05dcd",
+        "mobilesdk_app_id": "1:723451701117:android:d28084bb3e847836c64e14",
         "android_client_info": {
-          "package_name": "com.bd.foodsolution"
+          "package_name": "com.SABTech.foodsolution"
         }
       },
       "oauth_client": [
         {
-          "client_id": "240340699889-8docgdabbvqn09rcjdrk9ok6ofjlf6oo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.bd.foodsolution",
-            "certificate_hash": "4493f9d2448ab06d3d085c22ff913f50201a9bb5"
-          }
-        },
-        {
-          "client_id": "240340699889-l728uvvlf47gl90kp544t984tt0nl57k.apps.googleusercontent.com",
+          "client_id": "723451701117-pr4c83m18klclm2lqn66c46e30453t2b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC5K5mZfUfAoSYdjTi-cvgeQIBUdsk2z6g"
+          "current_key": "AIzaSyAwfj92o7TC4HWQbc_h40eJ8SVw1mE8lX8"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "240340699889-l728uvvlf47gl90kp544t984tt0nl57k.apps.googleusercontent.com",
+              "client_id": "723451701117-pr4c83m18klclm2lqn66c46e30453t2b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

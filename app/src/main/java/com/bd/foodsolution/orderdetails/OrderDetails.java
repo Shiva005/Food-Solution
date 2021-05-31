@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -49,7 +49,7 @@ public class OrderDetails extends AppCompatActivity {
 
         otp_verify=findViewById(R.id.otp_verify);
 
-        database = FirebaseDatabase.getInstance().getReference("Order");
+        database = FirebaseDatabase.getInstance("https://food-solution-a5cbb-default-rtdb.firebaseio.com/").getReference("Order");
 
         name = findViewById(R.id.profileName);
 

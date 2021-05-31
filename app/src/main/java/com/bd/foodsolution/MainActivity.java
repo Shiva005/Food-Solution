@@ -3,36 +3,31 @@ package com.bd.foodsolution;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bd.foodsolution.Adapter.HorizontalRecyclerViewAdapter;
 import com.bd.foodsolution.Adapter.VerticleRecyclerViewAdapter;
-import com.bd.foodsolution.orderdetails.YourOrder;
 import com.bd.foodsolution.authentication.LoginActivity;
 import com.bd.foodsolution.authentication.ShowProfileActivity;
 import com.bd.foodsolution.authentication.UpdatePassword;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.bd.foodsolution.orderdetails.YourOrder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,7 +41,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, RewardedVideoAdListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private List names = new ArrayList<>(Arrays.asList("Juice", "Sandwich", "Pizza ", "Hamburger", "Milk", "Cake"));
     private List imageUrl = new ArrayList<>(Arrays.asList(R.drawable.juice, R.drawable.sandwich, R.drawable.pizza, R.drawable.hjamburger, R.drawable.milk, R.drawable.cake));
 
@@ -55,16 +50,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private List FoodPrice = new ArrayList<>(Arrays.asList("140", "100", "20", "50", "500", "200", "140", "110"));
 
     private boolean exit = false;
-    private String Phone = "+917814098910";
+    private String Phone = "+9779814214270";
     private FirebaseAuth firebaseAuth;
-    private FirebaseDatabase firebaseDatabase;
-    private FirebaseStorage firebaseStorage;
     private View mHeaderView;
-    private TextView userName,userGmail;
+    private TextView userName, userGmail;
     private CircleImageView circleImageView;
     private FirebaseUser user;
     private Uri personPhoto;
-    private RewardedVideoAd mRewardedVideoAd;
 
 
     @Override
@@ -77,16 +69,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setTitle("Home");
         FirebaseApp.initializeApp(this);
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseStorage = FirebaseStorage.getInstance();
-
-
-        MobileAds.initialize(this, getString(R.string.mRewardedVideoAd));
-        // Use an activity context to get the rewarded video instance.
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
-        loadRewardedVideoAd();
-
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -113,41 +95,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd(getString(R.string.mRewardedVideoAd2),
-                new AdRequest.Builder().build());
-    }
-
-
     private void setUserDetails() {
 
-        user=firebaseAuth.getCurrentUser();
+        user = firebaseAuth.getCurrentUser();
         String displayName, email;
         userName = mHeaderView.findViewById(R.id.userGamilName);
         userGmail = mHeaderView.findViewById(R.id.mail);
 
 
         //if (user != null) {
-            displayName = user.getDisplayName();
-            for (UserInfo userInfo : user.getProviderData()) {
-                if (displayName == null && userInfo.getDisplayName() != null) {
-                    displayName = userInfo.getDisplayName();
-                    userName.setText(displayName);
-                }
+        displayName = user.getDisplayName();
+        for (UserInfo userInfo : user.getProviderData()) {
+            if (displayName == null && userInfo.getDisplayName() != null) {
+                displayName = userInfo.getDisplayName();
+                userName.setText(displayName);
             }
-            email = user.getEmail();
-            userGmail.setText(email);
+        }
+        email = user.getEmail();
+        userGmail.setText(email);
         //}
     }
 
     @Override
     public void onBackPressed() {
 
-        if (exit){
+        if (exit) {
             super.onBackPressed();
-        }
-        else
-        {
+        } else {
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
@@ -179,48 +153,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.action_settings) {
             return true;
-        }
-        else if(id==R.id.action_Share){
+        } else if (id == R.id.action_Share) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
             intent.putExtra(Intent.EXTRA_SUBJECT, "Quality food is our priority.");
-            intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.bd.foodsolution");
+            intent.putExtra(Intent.EXTRA_TEXT, "App Link will be pasted here..");
             intent.setType("text/plain");
             startActivity(Intent.createChooser(intent, "Share link!"));
 
-        }
-        else if(id==R.id.action_Rate){
+        } else if (id == R.id.action_Rate) {
             try {
-                Uri marketUri = Uri.parse("market://details?id=com.bd.foodsolution");
+                Uri marketUri = Uri.parse("app Link");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
                 startActivity(marketIntent);
-            }catch(ActivityNotFoundException e) {
-                Uri marketUri = Uri.parse("https://play.google.com/store/apps/details?id=com.bd.foodsolution");
+            } catch (ActivityNotFoundException e) {
+                Uri marketUri = Uri.parse("app Link");
                 Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
                 startActivity(marketIntent);
             }
             return true;
-        }
-        else if(id== R.id.showprofile)
-        {
+        } else if (id == R.id.showprofile) {
             startActivity(new Intent(MainActivity.this, ShowProfileActivity.class));
             return true;
-        }
-        else if(id==R.id.Updateprofile){
+        } else if (id == R.id.Updateprofile) {
             startActivity(new Intent(MainActivity.this, UpdatePassword.class));
             return true;
-        }
-
-        else if (id== R.id.usr_donate)
-        {
-            if (mRewardedVideoAd.isLoaded()) {
-                mRewardedVideoAd.show();
-            }
+        } else if (id == R.id.usr_donate) {
+            Toast.makeText(this, "Thanks for your consideration", Toast.LENGTH_SHORT).show();
             return true;
-        }
-
-
-        else if(id==R.id.Logout){
+        } else if (id == R.id.Logout) {
             firebaseAuth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
@@ -251,9 +212,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Toast.makeText(MainActivity.this, "About Us", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Feed_back:
-                    startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
+                startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
                 break;
-            case R.id.Show_profile :
+            case R.id.Show_profile:
                 startActivity(new Intent(MainActivity.this, ShowProfileActivity.class));
                 break;
                     /*case R.id.Update_profile:
@@ -295,56 +256,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setAdapter(adapter);
     }
 
-    @Override
-    public void onRewardedVideoAdLoaded() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdOpened() {
-
-    }
-
-    @Override
-    public void onRewardedVideoStarted() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-        loadRewardedVideoAd();
-    }
-
-    @Override
-    public void onRewarded(RewardItem rewardItem) {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-
-    }
 
     @Override
     public void onResume() {
-        mRewardedVideoAd.resume(this);
         super.onResume();
     }
 
     @Override
     public void onPause() {
-        mRewardedVideoAd.pause(this);
         super.onPause();
     }
 
     @Override
     public void onDestroy() {
-        mRewardedVideoAd.destroy(this);
         super.onDestroy();
     }
 

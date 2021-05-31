@@ -54,10 +54,8 @@
 
         <activity android:name=".PolicyActivity" />
         <activity android:name=".orderdetails.YourOrder" />
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs"/>
 
-
-        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5341653952657791~5642364563"/>

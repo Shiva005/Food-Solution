@@ -2,9 +2,9 @@ package com.bd.foodsolution.authentication;
 
 import android.app.ProgressDialog;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -52,7 +52,7 @@ public class ShowProfileActivity extends AppCompatActivity {
         profileAddress = findViewById(R.id.tvProfileAddress);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://food-solution-a5cbb-default-rtdb.firebaseio.com/");
         firebaseStorage = FirebaseStorage.getInstance();
 
         DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());

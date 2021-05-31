@@ -1,9 +1,9 @@
 package com.bd.foodsolution.orderdetails;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.bd.foodsolution.R;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 
 public class OrderPage extends AppCompatActivity {
     private ImageView IV;
@@ -24,7 +23,6 @@ public class OrderPage extends AppCompatActivity {
     private String pric;
     private String codeSent;
     private Toolbar toolbar;
-    private InterstitialAd mInterstitialAd;
     int value=0;
 
     @Override
@@ -36,12 +34,6 @@ public class OrderPage extends AppCompatActivity {
         setSupportActionBar(toolbar);
         this.setTitle("Order");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.mInterstialAd));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
 
         User_Name = findViewById(R.id.userName);
         order=findViewById(R.id.Order);
@@ -64,11 +56,7 @@ public class OrderPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String Check_Phone=Order_Phone.getText().toString().trim();
-                if(mInterstitialAd.isLoaded())
-                {
-                    mInterstitialAd.show();
-                    return;
-                }
+
                 if(Check_Phone.isEmpty()) {
                     if(Order_Phone.length()<10) {
                         Order_Phone.setError("Phone number Required !!");

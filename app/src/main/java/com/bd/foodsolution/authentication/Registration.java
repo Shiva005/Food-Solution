@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,16 +26,17 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Registration extends AppCompatActivity {
     private EditText userName, userPassword,userConfirmPass, userEmailAddress, userAddress;
     private Button regButton;
-    private FirebaseAuth firebaseAuth;
     private ImageView userProfilePic;
     String Useremail, name, address, password,confirm;
-    private FirebaseStorage firebaseStorage;
     private static int PICK_IMAGE = 123;
     Uri imagePath;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
 
 
@@ -80,11 +81,11 @@ public class Registration extends AppCompatActivity {
                                 //EmailVerification();
                                 sendUserData();
                                 firebaseAuth.signOut();
-                                Toast.makeText(Registration.this, "Successfully Registered, Upload complete!", Toast.LENGTH_SHORT).show();
-                                finish();
+                                Toast.makeText(Registration.this, "Successfully Registered.", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Registration.this, LoginActivity.class));
+                                finish();
                             }else{
-                                Toast.makeText(Registration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registration.this, "Registration Failed!!", Toast.LENGTH_SHORT).show();
                             }
 
                         }
@@ -128,7 +129,7 @@ public class Registration extends AppCompatActivity {
         name = userName.getText().toString();
         password = userPassword.getText().toString();
         confirm = userConfirmPass.getText().toString();
-        Useremail = userEmailAddress.getText().toString();
+        Useremail = userEmailAddress.getText().toString().trim();
         address = userAddress.getText().toString();
 
 
@@ -143,7 +144,6 @@ public class Registration extends AppCompatActivity {
             {
                 result = true;
             }
-
         }
         return result;
     }
@@ -170,8 +170,8 @@ public class Registration extends AppCompatActivity {
     }*/
 
     private void sendUserData(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://food-solution-a5cbb-default-rtdb.firebaseio.com/");
+        DatabaseReference myRef = firebaseDatabase.getReference(Objects.requireNonNull(firebaseAuth.getUid()));
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");  //User id/Images/Profile Pic.jpg
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
