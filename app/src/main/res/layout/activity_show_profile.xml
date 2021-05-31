@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/signBack"
+    android:orientation="vertical"
     tools:context=".authentication.ShowProfileActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -22,58 +22,60 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivProfilePic"
         android:layout_width="345dp"
         android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="2dp"
+        app:civ_border_width="1dp" />
 
-        />
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
 
         <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
             android:layout_marginTop="2dp"
-            android:layout_width="345dp"
-            android:layout_height="170dp"
+            android:elevation="5dp"
             app:cardCornerRadius="5dp"
-            >
+            app:cardElevation="5dp">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="5dp"
                     android:id="@+id/ProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
 
                 <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="5dp"
                     android:id="@+id/tvProfileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp" />
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="5dp"
                     android:id="@+id/tvProfileAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp" />
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp" />
 
 
             </LinearLayout>

@@ -37,7 +37,7 @@
             android:id="@+id/email_mainEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="creativedevelopers2019@gmail.com"
+            android:text="shiukumar05@gmail.com"
             android:enabled="false"
             android:inputType="textEmailAddress"
             android:backgroundTint="@color/signBack"/>

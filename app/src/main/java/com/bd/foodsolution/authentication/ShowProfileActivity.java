@@ -70,9 +70,9 @@ public class ShowProfileActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 progressDialog.dismiss();
                 UserGetterSetter userProfile = dataSnapshot.getValue(UserGetterSetter.class);
-                profileName.setText( userProfile.getUserName().toString());
-                profileEmail.setText( userProfile.getUserEmail().toString());
-                profileAddress.setText(  userProfile.getUserAddress().toString());
+                profileName.setText( "Name: "+userProfile.getUserName().toString());
+                profileEmail.setText( "Email: "+userProfile.getUserEmail().toString());
+                profileAddress.setText(  "Address: "+userProfile.getUserAddress().toString());
             }
 
             @Override

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".orderdetails.OrderDetails">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,82 +22,92 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_gravity="center"
         android:id="@+id/Item_Image"
-        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/Item_Name"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Item Name"/>
-
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/Item_Price"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Item Price"/>
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10sp"
-        android:id="@+id/Item_Quantity"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Item Quantity"/>
-
-
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/total_price"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Total Price"/>
-
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/profileName"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Name"/>
-
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/order_phone_number"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Phone"/>
-    <TextView
-        android:textSize="18sp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/Address"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Your Location"/>
-
-    <Button
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        android:background="@color/signBack"
-        android:layout_marginTop="30dp"
-        android:id="@+id/otp_verify"
-        android:layout_width="330dp"
+        android:layout_margin="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Item_Name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Item Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Item_Price"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Item Price"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Item_Quantity"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="9dp"
+            android:text="Item Quantity"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Total Price"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/order_phone_number"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Phone"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Address"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Your Location"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/otp_verify"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/signBack"
+            android:text="Confirm" />
+    </LinearLayout>
 
 </LinearLayout>
